@@ -11,7 +11,7 @@ export default function ClothingCard({ item }: Props) {
   return (
     <div
       onClick={() => navigate(`/detail/${item.id}`)}
-      className="rounded-2xl shadow-sm bg-white overflow-hidden active:scale-95 transition-transform cursor-pointer"
+      className="rounded-xl shadow-sm bg-white overflow-hidden active:scale-95 transition-transform cursor-pointer"
     >
       <div className="aspect-square">
         <img

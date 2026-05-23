@@ -55,8 +55,8 @@ export default function Home() {
       <SearchBar />
 
       {/* 居中标题 */}
-      <div className="text-center py-5">
-        <h1 className="text-lg font-semibold tracking-wider text-[#D4A0A8]">
+      <div className="text-center py-2">
+        <h1 className="text-base font-semibold tracking-wider text-[#D4A0A8]">
           我的衣橱
         </h1>
       </div>
@@ -73,14 +73,14 @@ export default function Home() {
           </button>
         </div>
       ) : (
-        <div className="px-3 space-y-5 pb-4">
+        <div className="px-2 space-y-3 pb-20">
           {groups.map(({ category, items }) => (
             <section key={category.id}>
               {/* 分类标题行 */}
-              <div className="flex items-center justify-between px-1 mb-2">
-                <h2 className="text-sm font-medium text-gray-600">
+              <div className="flex items-center justify-between px-0.5 mb-1">
+                <h2 className="text-xs font-medium text-gray-500">
                   {category.name}
-                  <span className="ml-1.5 text-xs text-gray-400 font-normal">
+                  <span className="ml-1 text-[10px] text-gray-400 font-normal">
                     {items.length}
                   </span>
                 </h2>
@@ -90,17 +90,17 @@ export default function Home() {
               {items.length === 0 ? (
                 <div
                   onClick={() => navigate(`/category/${category.id}`)}
-                  className="rounded-2xl border border-dashed border-[#FFE4E1] p-6 text-center cursor-pointer hover:border-[#FFB6C1] transition-colors bg-white/60"
+                  className="rounded-xl border border-dashed border-[#FFE4E1] p-4 text-center cursor-pointer hover:border-[#FFB6C1] transition-colors bg-white/60"
                 >
-                  <p className="text-gray-400 text-xs">暂无衣服，点击添加</p>
+                  <p className="text-gray-400 text-[10px]">暂无衣服，点击添加</p>
                 </div>
               ) : (
-                <div className="overflow-x-auto scrollbar-hide -mr-3">
-                  <div className="flex gap-2 pb-1 pr-3" style={{ scrollSnapType: 'x mandatory' }}>
+                <div className="overflow-x-auto scrollbar-hide -mr-2">
+                  <div className="flex gap-1.5 pb-1 pr-2" style={{ scrollSnapType: 'x mandatory' }}>
                     {items.map((item) => (
                       <div
                         key={item.id}
-                        style={{ scrollSnapAlign: 'start', width: '31%', minWidth: '120px', flexShrink: 0 }}
+                        style={{ scrollSnapAlign: 'start', width: '26%', minWidth: '100px', flexShrink: 0 }}
                       >
                         <ClothingCard item={item} />
                       </div>
